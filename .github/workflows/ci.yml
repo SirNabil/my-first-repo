@@ -16,8 +16,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.sirnabil }}
-          password: ${{ secrets.dckr_pat_Vbuf6F6EyLnvb1TG7OB6QLM1v28 }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
         run: docker build -t sirnabil/my-devops-app:latest .

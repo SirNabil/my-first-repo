@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Docker Build
 
 on:
   push:
@@ -13,16 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python 3
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: List files (debug)
-        run: |
-          ls -la
-
-      - name: Run app.py
-        run: python3 app.py
-
+      - name: Build Docker image
+        run: docker build -t my-devops-app .
 
